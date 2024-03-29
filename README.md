@@ -16,18 +16,18 @@ Server: **Medical Server**
 
 Uploads patient image
 
-Parameters:
+**Parameters**:
 1. patientId (required)
 2. file
 
-Responses:
+**Responses**:
 1. 200 - Sucessful operation
 
 ### `POST` /patient
 
 Add a new patient
 
-Parameters:
+**Parameters**:
 1. body (required)
 ```json
 {
@@ -58,7 +58,7 @@ Parameters:
 }
 ```
 
-Responses
+**Responses**
 1. 200 - Successful operation
 2. 405 - Invalid input
 
@@ -66,7 +66,7 @@ Responses
 
 Update a patient
 
-Parameters:
+**Parameters**:
 1. body (required)
 ```json
 {
@@ -97,7 +97,7 @@ Parameters:
 }
 ```
 
-Responses:
+**Responses**:
 1. 400 - Invalid ID supplied
 2. 404 - Patient not found
 3. 405 - Validation exception
@@ -106,10 +106,10 @@ Responses:
 
 Find patients by status
 
-Parameters:
+**Parameters**:
 1. status (required)
 
-Responses:
+**Responses**:
 1. 200 - Successful operation
 ```json
 {
@@ -146,10 +146,10 @@ Responses:
 
 Find patient by ID
 
-Parameters:
+**Parameters**:
 1. patientId (required)
 
-Responses:
+**Responses**:
 1. 200 - Successful operation
 ```json
 {
@@ -186,10 +186,10 @@ Responses:
 
 Deletes a patient
 
-Parameters:
+**Parameters**:
 1. patientId (required)
 
-Responses:
+**Responses**:
 1. 400 - Invalid ID supplied
 2. 404 - Patient not found
 
@@ -199,7 +199,7 @@ Responses:
 
 Place a consultation for patient
 
-Parameters:
+**Parameters**:
 1. body (required)
 ```json
 {
@@ -211,17 +211,17 @@ Parameters:
 }
 ```
 
-Responses:
+**Responses**:
 1. 200 - Sucessful operation
 2. 400 - Invalid consultation
 
-### `GET` consultation/{consultationId}
+### `GET` /consultation/{consultationId}
 Find consultation by ID
 
-Parameters:
+**Parameters**:
 1. consultationId (required)
 
-Responses:
+**Responses**:
 
 1. 200 - Successful operation
 ```json
@@ -240,10 +240,10 @@ Responses:
 
 Deletes a consult
 
-Parameters:
+**Parameters**:
 1. consultationId (required)
 
-Responses:
+**Responses**:
 1. 400 - Invalid ID supplied
 2. 404 - Consultation not found
 
@@ -253,7 +253,7 @@ Responses:
 
 Add a new medic
 
-Parameters:
+**Parameters**:
 1. body (required)
 ```json
 {
@@ -263,6 +263,57 @@ Parameters:
     "name": "medicName"
 }
 ```
-Responses
+**Responses**
 1. 200 - Successful operation
 2. 405 - Invalid input
+
+### `PUT` /medic
+
+Update a medic
+
+**Parameters**:
+1. body (required)
+```json
+{
+    "id": 0,
+    "username": "medicUsername",
+    "password": "medicPassword",
+    "name": "medicName"
+}
+```
+
+**Responses**:
+1. 400 - Invalid ID supplied
+2. 404 - Medic not found
+3. 405 - Validation exception
+
+### `GET` /medic/{medicId}
+
+Find medic by ID
+
+**Parameters**:
+1. medicId (required)
+
+**Responses**:
+1. 200 - Successful operation
+```json
+{
+    "id": 0,
+    "username": "medicUsername",
+    "password": "medicPassword",
+    "name": "medicName"
+}
+```
+2. 400 - Invalid ID supplied
+3. 404 - Medic not found
+
+### `DELETE` /medic/{medicId}
+
+Deletes a consult
+
+**Parameters**:
+1. medicId (required)
+
+**Responses**:
+1. 400 - Invalid ID supplied
+2. 404 - Medic not found
