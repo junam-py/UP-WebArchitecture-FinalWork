@@ -13,8 +13,8 @@
       "description": "Patients management"
     },
     {
-      "name": "Medicals Consultation",
-      "description": "Medicals consultation management"
+      "name": "Medical Consultations",
+      "description": "Medicals consultations management"
     },
     {
       "name": "Medics",
@@ -177,7 +177,7 @@
     },
     "/consultations": {
       "post": {
-        "tags": ["Medicals Consultation"],
+        "tags": ["Medical Consultations"],
         "summary": "Place a consultation for patient",
         "parameters": [
           {
@@ -201,7 +201,7 @@
     },
     "/consultations/{consultationId}": {
       "get": {
-        "tags": ["Medicals Consultation"],
+        "tags": ["Medical Consultations"],
         "summary": "Find consultation by ID",
         "parameters": [
           {
@@ -227,7 +227,7 @@
         }
       },
       "delete": {
-        "tags": ["Medicals Consultation"],
+        "tags": ["Medical Consultations"],
         "summary": "Deletes a consult",
         "parameters": [
           {
@@ -349,7 +349,7 @@
     "Patient": {
       "type": "object",
       "properties": {
-        "id": {
+        "patientId": {
           "type": "integer",
           "format": "int64"
         },
@@ -416,11 +416,15 @@
     "Consultation": {
       "type": "object",
       "properties": {
-        "id": {
+        "consultationId": {
           "type": "integer",
           "format": "int64"
         },
-        "patient_id": {
+        "patientId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "medicId": {
           "type": "integer",
           "format": "int64"
         },
@@ -431,7 +435,7 @@
           "type": "string",
           "format": "date-time"
         },
-        "complete": {
+        "completed": {
           "type": "boolean"
         }
       }
@@ -439,7 +443,7 @@
     "Medic": {
       "type": "object",
       "properties": {
-        "id": {
+        "medicId": {
           "type": "integer",
           "format": "int64"
         },
