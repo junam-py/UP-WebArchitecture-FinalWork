@@ -139,9 +139,9 @@ const deletePatient = async (req, res, next) => {
   };
   
 module.exports = {
-    getPatientById,
-    getPatientsByStatus,
     createPatient,
     updatePatient,
+    getPatientsByStatus,
+    getPatientById,
     deletePatient
 };
