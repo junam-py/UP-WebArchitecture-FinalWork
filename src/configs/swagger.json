@@ -300,7 +300,7 @@
       },
       "delete": {
         "tags": ["Medics"],
-        "summary": "Deletes a consult",
+        "summary": "Deletes a medic",
         "parameters": [
           {
             "name": "medicId",
