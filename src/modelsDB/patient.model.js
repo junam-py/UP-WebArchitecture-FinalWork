@@ -35,10 +35,6 @@ const patientSchema = new Schema({
         type: [emergencyContactSchema],
         required: false
     },
-    photoUrls: {
-        type: [String],
-        required: false
-    },
     lastPhysicalExaminationDate: {
         type: Date,
         required: false
