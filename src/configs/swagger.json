@@ -25,31 +25,6 @@
     "https"
   ],
   "paths": {
-    "/patients/{patientId}/uploadImage": {
-      "post": {
-        "tags": ["Patients"],
-        "summary": "Uploads patient image",
-        "parameters": [
-          {
-            "name": "patientId",
-            "in": "path",
-            "required": true,
-            "type": "integer"
-          },
-          {
-            "name": "file",
-            "in": "formData",
-            "required": true,
-            "type": "file"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation"
-          }
-        }
-      }
-    },
     "/patients": {
       "post": {
         "tags": ["Patients"],
@@ -99,14 +74,14 @@
         }
       }
     },
-    "/patients/findByStatus": {
+    "/patients/{status}": {
       "get": {
         "tags": ["Patients"],
         "summary": "Find patients by status",
         "parameters": [
           {
             "name": "status",
-            "in": "query",
+            "in": "path",
             "required": true,
             "type": "string"
           }
@@ -367,12 +342,6 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/EmergencyContact"
-          }
-        },
-        "photoUrls": {
-          "type": "array",
-          "items": {
-            "type": "string"
           }
         },
         "lastPhysicalExaminationDate": {
