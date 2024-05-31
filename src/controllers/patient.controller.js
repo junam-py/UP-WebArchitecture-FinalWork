@@ -125,7 +125,7 @@ const getPatientById = async (req, res, next) => {
 
 const deletePatient = async (req, res, next) => {
     const filter = { patientId: req.params.id };
-    Article.findOneAndDelete(filter)
+    Patient.findOneAndDelete(filter)
       .then((result) => {
         if (result) {
           res.status(200).send(formatResponse(null, 'Patient deleted'));
