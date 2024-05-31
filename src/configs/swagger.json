@@ -47,31 +47,6 @@
             "description": "Invalid input"
           }
         }
-      },
-      "put": {
-        "tags": ["Patients"],
-        "summary": "Update a patient",
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Patient"
-            }
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "Patient not found"
-          },
-          "405": {
-            "description": "Validation exception"
-          }
-        }
       }
     },
     "/patients/{status}": {
@@ -126,6 +101,37 @@
           },
           "404": {
             "description": "Patient not found"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Patients"],
+        "summary": "Update a patient by ID",
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "path",
+            "required": true,
+            "type": "integer"            
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Patient"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Patient not found"
+          },
+          "405": {
+            "description": "Validation exception"
           }
         }
       },
@@ -244,31 +250,6 @@
             "description": "Invalid input"
           }
         }
-      },
-      "put": {
-        "tags": ["Medics"],
-        "summary": "Update a medic",
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Medic"
-            }
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "Medic not found"
-          },
-          "405": {
-            "description": "Validation exception"
-          }
-        }
       }
     },
     "/medics/{medicId}": {
@@ -295,6 +276,37 @@
           },
           "404": {
             "description": "Medic not found"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Medics"],
+        "summary": "Update a medic",
+        "parameters": [
+          {
+            "name": "medicId",
+            "in": "path",
+            "required": true,
+            "type": "integer"      
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Medic"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Medic not found"
+          },
+          "405": {
+            "description": "Validation exception"
           }
         }
       },
