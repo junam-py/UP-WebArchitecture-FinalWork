@@ -9,7 +9,7 @@ router.post(basePath + '/', patientsCtrl.createPatient);
 
 router.put(basePath + '/:id', patientsCtrl.updatePatient);
 
-router.get(basePath + '/:status', patientsCtrl.getPatientsByStatus);
+router.get(basePath + '/status/:status', patientsCtrl.getPatientsByStatus);
 
 router.get(basePath + '/:id', patientsCtrl.getPatientById);
 

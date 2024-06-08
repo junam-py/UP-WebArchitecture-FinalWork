@@ -3,7 +3,7 @@ const medicalConsultationsCtrl = require('../controllers/medicalConsultation.con
 
 const router = express.Router();
 
-const basePath = '/api/medicalConsultations';
+const basePath = '/api/consultations';
 
 router.post(basePath + '/', medicalConsultationsCtrl.createConsultation);
 

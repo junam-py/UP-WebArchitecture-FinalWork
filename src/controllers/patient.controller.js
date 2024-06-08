@@ -93,11 +93,11 @@ const updatePatient = async (req, res, next) => {
       });
   };
 
-const getPatientsByStatus = async (req, res, next) => {
+  const getPatientsByStatus = async (req, res, next) => {
     const filters = { status: req.params.status };
     Patient.find(filters)
         .then((patients) => {
-            if (patients && patients.lenght > 0) {
+            if (patients && patients.length > 0) {
                 res.status(200).send(formatResponse(patients, null));
             } else {
                 res.status(404).send(formatResponse(null, 'Patients not found'));
@@ -107,12 +107,13 @@ const getPatientsByStatus = async (req, res, next) => {
             next(err);
         });
 };
+
   
 const getPatientById = async (req, res, next) => {
-    const filters = { patientId: req.params.patientId };
+    const filters = { patientId: req.params.id };
     Patient.find(filters)
         .then((patients) => {
-            if (patients && patients.lenght > 0) {
+            if (patients && patients.length > 0) {
                 res.status(200).send(formatResponse(patients, null));
             } else {
                 res.status(404).send(formatResponse(null, 'Patient not found'));

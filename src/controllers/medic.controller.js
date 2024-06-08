@@ -46,10 +46,10 @@ const createMedic = async (req, res, next) => {
 };
 
 const getMedicById = async (req, res, next) => {
-    const filters = { medicId: req.params.medicId };
+    const filters = { medicId: req.params.id };
     Medic.find(filters)
         .then((medics) => {
-            if (medics && medics.lenght > 0) {
+            if (medics && medics.length > 0) {
                 res.status(200).send(formatResponse(medics, null));
             } else {
                 res.status(404).send(formatResponse(null, 'Medic not found'));

@@ -51,10 +51,10 @@ const createConsultation = async (req, res, next) => {
 
   
 const getConsultationById = async (req, res, next) => {
-    const filters = { consultationId: req.params.consultationId };
+    const filters = { consultationId: req.params.id };
     Consultation.find(filters)
         .then((consultations) => {
-            if (consultations && consultations.lenght > 0) {
+            if (consultations && consultations.length > 0) {
                 res.status(200).send(formatResponse(consultations, null));
             } else {
                 res.status(404).send(formatResponse(null, 'Consultation not found'));
@@ -66,7 +66,7 @@ const getConsultationById = async (req, res, next) => {
 };
 
 const deleteConsultation = async (req, res, next) => {
-    const filter = { consultationId: req.paramas.consultationId };
+    const filter = { consultationId: req.params.id };
     Consultation.findOneAndDelete(filter)
       .then((result) => {
         if (result) {
