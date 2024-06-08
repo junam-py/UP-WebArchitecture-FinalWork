@@ -24,10 +24,10 @@ class Database {
           useUnifiedTopology: true,
         })
         .then(function () {
-          console.log('MongoDB Connection Done!!');
+          console.log('MongoDB connection done');
         })
         .catch(function (err) {
-          console.log('MongoDB Database Connection Error', err);
+          console.log('MongoDB database connection error', err);
         });
     } catch (e) {
       console.log(e);

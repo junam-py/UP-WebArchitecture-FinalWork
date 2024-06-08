@@ -6,7 +6,7 @@
     "title": "Medical Server"
   },
   "host": "localhost:3000",
-  "basePath": "/v1",
+  "basePath": "/",
   "tags": [
     {
       "name": "Patients",
@@ -22,10 +22,10 @@
     }
   ],
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
-    "/patients": {
+    "api/patients": {
       "post": {
         "tags": ["Patients"],
         "summary": "Add a new patient",
@@ -49,7 +49,7 @@
         }
       }
     },
-    "/patients/{status}": {
+    "/api/patients/{status}": {
       "get": {
         "tags": ["Patients"],
         "summary": "Find patients by status",
@@ -77,7 +77,7 @@
         }
       }
     },
-    "/patients/{patientId}": {
+    "/api/patients/{patientId}": {
       "get": {
         "tags": ["Patients"],
         "summary": "Find patient by ID",
@@ -156,7 +156,7 @@
         }
       }
     },
-    "/consultations": {
+    "/api/consultations": {
       "post": {
         "tags": ["Medical Consultations"],
         "summary": "Place a consultation for patient",
@@ -180,7 +180,7 @@
         }
       }
     },
-    "/consultations/{consultationId}": {
+    "/api/consultations/{consultationId}": {
       "get": {
         "tags": ["Medical Consultations"],
         "summary": "Find consultation by ID",
@@ -228,7 +228,7 @@
         }
       }
     },
-    "/medics": {
+    "/api/medics": {
       "post": {
         "tags": ["Medics"],
         "summary": "Add a new medic",
@@ -252,7 +252,7 @@
         }
       }
     },
-    "/medics/{medicId}": {
+    "/api/medics/{medicId}": {
       "get": {
         "tags": ["Medics"],
         "summary": "Find medic by ID",
