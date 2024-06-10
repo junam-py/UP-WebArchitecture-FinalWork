@@ -46,7 +46,7 @@ class Database {
     });
 
     db.on('error', (err) => {
-      console.log('DB Connection errors', err);
+      console.log('Database connection error', err);
     });
   }
 }

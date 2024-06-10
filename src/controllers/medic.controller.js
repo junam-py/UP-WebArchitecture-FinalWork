@@ -1,5 +1,5 @@
 const { join } = require('path');
-const Medic = require('../modelsDB/medic.model');
+const Medic = require('../models/medic.model');
 const { formatResponse } = require('../utils/utils');
 require('dotenv').config({ path: join(__dirname, '..', '/configs/.env') });
 
